@@ -8,7 +8,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
 app.get('/students?/:id', (req,res)=>{
-    res.send(`Request: ${req.params.id}\n`)
+    res.send(`Request: ${req.params.id}\n${process.env.STATUS}`)
 })
 app.post('/newStudent', (req, res)=>{
     const firstName = req.body.fName
